@@ -2,7 +2,7 @@ package guru.springframework;
 
 public class Dollar {
 
-    int amount;
+    private int amount;
 
     Dollar(int amount) {
         this.amount = amount;
@@ -10,5 +10,11 @@ public class Dollar {
 
     Dollar times(int multiplier) {
         return new Dollar(amount*multiplier);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        Dollar dollar = (Dollar) o;
+        return this.amount == dollar.amount;
     }
 }
